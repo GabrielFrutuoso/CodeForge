@@ -1,9 +1,12 @@
+import { Output } from "./components/Output/Output"
+
 function App() {
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello</h1>
-    </>
+    <div className="flex h-screen w-screen overflow-clip">
+      <h1>CodeForge</h1>
+      <Output />
+    </div>
   )
 }
 
