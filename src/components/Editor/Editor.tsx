@@ -1,6 +1,7 @@
 import { Editor } from "@monaco-editor/react";
 import { ResizablePanel } from "../ui/resizable";
 import { customTheme } from "./theme";
+import { LuCopy } from "react-icons/lu";
 
 interface EditorProps {
   language: string;
@@ -31,12 +32,20 @@ export const EditorComponent = ({
     scrollBeyondLastLine: true,
   };
 
+  const copyValue = () => {
+    navigator.clipboard.writeText(value);
+  };
+
   return (
-    <ResizablePanel className="min-h-8">
-      <div className="flex flex-col h-full">
-        <div title={language} className="bg-zinc-900 text-white p-2 flex items-center">
+    <ResizablePanel className="min-h-8 flex flex-col">
+      <div className=" justify-between h-full">
+        <div title={language} className="bg-zinc-900 text-white p-2 flex items-center justify-between">
           {icon}
+          <button title="copiar" className="text-zinc-400 hover:text-zinc-300">
+            <LuCopy size={16} onClick={copyValue} />
+          </button>
         </div>
+        
         <Editor
           value={value}
           onChange={(e) => setValue(e || "")}

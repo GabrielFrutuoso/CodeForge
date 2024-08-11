@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="flex h-screen w-screen overflow-clip">
       <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel minSize={25} maxSize={80} defaultSize={50}>
+        <ResizablePanel minSize={25} maxSize={80} defaultSize={35}>
           <ResizablePanelGroup direction="vertical">
             <header title="CodeForge" className="flex items-center justify-center gap-1 bg-zinc-900 py-1 cursor-default">
               <SiCurseforge size={24} color="white" />
