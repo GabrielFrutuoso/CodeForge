@@ -1,3 +1,4 @@
+import { SiCurseforge } from "react-icons/si";
 import { EditorComponent } from "./components/Editor/Editor";
 import { Output } from "./components/Output/Output";
 import {
@@ -10,18 +11,19 @@ import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 
 function App() {
-  const [html, setHtml] = useState("");
-  const [css, setCss] = useState("");
-  const [js, setJs] = useState("");
-
-  console.log(html, css, js);
-  
+  const [html, setHtml] = useState('');
+  const [css, setCss] = useState('');
+  const [js, setJs] = useState('');  
 
   return (
     <div className="flex h-screen w-screen overflow-clip">
       <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel minSize={25} maxSize={50} defaultSize={25}>
+        <ResizablePanel minSize={25} maxSize={80} defaultSize={50}>
           <ResizablePanelGroup direction="vertical">
+            <header title="CodeForge" className="flex items-center justify-center gap-1 bg-zinc-900 py-1 cursor-default">
+              <SiCurseforge size={24} color="white" />
+              <h1 className="text-xl font-bold text-neutral-300">CodeForge</h1>
+            </header>
             <EditorComponent
               value={html}
               setValue={setHtml}
