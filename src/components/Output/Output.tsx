@@ -4,12 +4,24 @@ export const Output = ({
   html,
   css,
   js,
+  setHtml,
+  setCss,
+  setJs,
 }: {
   html: string;
   css: string;
   js: string;
+  setHtml: React.Dispatch<React.SetStateAction<string>>;
+  setCss: React.Dispatch<React.SetStateAction<string>>;
+  setJs: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const [srcDoc, setSrcDoc] = useState("");
+
+  useEffect(() => {
+    setHtml(localStorage.getItem("html") || "");
+    setCss(localStorage.getItem("css") || "");
+    setJs(localStorage.getItem("js") || "");
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -20,6 +32,9 @@ export const Output = ({
           <script>${js}</script>
         </html>
       `);
+      localStorage.setItem("html", html);
+      localStorage.setItem("css", css);
+      localStorage.setItem("js", js);
     }, 250);
 
     return () => clearTimeout(timeout);

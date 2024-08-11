@@ -17,12 +17,12 @@ export const EditorComponent = ({
   value,
   setValue,
 }: EditorProps) => {
-
-  const handleEditorDidMount = (editor, monaco) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleEditorDidMount = (editor: { updateOptions: (arg0: { theme: string; }) => void; }, monaco: any) => {
     // Register custom theme
-    monaco.editor.defineTheme('myCustomTheme', customTheme);
+    monaco.editor.defineTheme("myCustomTheme", customTheme);
     // Set the theme to the editor instance
-    editor.updateOptions({ theme: 'myCustomTheme' });
+    editor.updateOptions({ theme: "myCustomTheme" });
   };
 
   const editorOptions = {
@@ -30,6 +30,7 @@ export const EditorComponent = ({
       enabled: false,
     },
     scrollBeyondLastLine: true,
+    wordWrap: "on",
   };
 
   const copyValue = () => {
@@ -39,13 +40,16 @@ export const EditorComponent = ({
   return (
     <ResizablePanel className="min-h-8 flex flex-col">
       <div className=" justify-between h-full">
-        <div title={language} className="bg-zinc-900 text-white p-2 flex items-center justify-between">
+        <div
+          title={language}
+          className="bg-zinc-900 text-white p-2 flex items-center justify-between"
+        >
           {icon}
           <button title="copiar" className="text-zinc-400 hover:text-zinc-300">
             <LuCopy size={16} onClick={copyValue} />
           </button>
         </div>
-        
+
         <Editor
           value={value}
           onChange={(e) => setValue(e || "")}
@@ -53,7 +57,8 @@ export const EditorComponent = ({
           theme="myCustomTheme"
           height={"100%"}
           onMount={handleEditorDidMount}
-          options={editorOptions}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          options={editorOptions as any}
         />
       </div>
     </ResizablePanel>

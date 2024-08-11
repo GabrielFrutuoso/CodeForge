@@ -11,16 +11,19 @@ import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 
 function App() {
-  const [html, setHtml] = useState('');
-  const [css, setCss] = useState('');
-  const [js, setJs] = useState('');  
+  const [html, setHtml] = useState("");
+  const [css, setCss] = useState("");
+  const [js, setJs] = useState("");
 
   return (
     <div className="flex h-screen w-screen overflow-clip">
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel minSize={25} maxSize={80} defaultSize={35}>
           <ResizablePanelGroup direction="vertical">
-            <header title="CodeForge" className="flex items-center justify-center gap-1 bg-zinc-900 py-1 cursor-default">
+            <header
+              title="CodeForge"
+              className="flex items-center justify-center gap-1 bg-zinc-900 py-1 cursor-default"
+            >
               <SiCurseforge size={24} color="white" />
               <h1 className="text-xl font-bold text-neutral-300">CodeForge</h1>
             </header>
@@ -48,7 +51,14 @@ function App() {
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel>
-          <Output html={html} css={css} js={js} />
+          <Output
+            html={html}
+            css={css}
+            js={js}
+            setHtml={setHtml}
+            setCss={setCss}
+            setJs={setJs}
+          />
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>
