@@ -1,4 +1,4 @@
-import { SiCurseforge } from "react-icons/si";
+import { SiCurseforge, SiGooglegemini } from "react-icons/si";
 import { EditorComponent } from "./components/Editor/Editor";
 import { Output } from "./components/Output/Output";
 import {
@@ -15,11 +15,18 @@ function App() {
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
 
+  window.onkeydown = (e) => {
+    if (e.ctrlKey && e.key === "g") {
+      e.preventDefault();
+      alert('teste')
+    }
+  };
+
   return (
     <div className="flex h-screen w-screen overflow-clip">
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel minSize={25} maxSize={80} defaultSize={35}>
-          <ResizablePanelGroup direction="vertical">
+          <ResizablePanelGroup direction="vertical" className="bg-zinc-900">
             <header
               title="CodeForge"
               className="flex items-center justify-center gap-1 bg-zinc-900 py-1 cursor-default"
@@ -47,6 +54,10 @@ function App() {
               language="javascript"
               icon={<RiJavascriptFill size={24} color="#f7df1e" />}
             />
+            <ResizableHandle className="bg-slate-800"  />
+            <ResizablePanel className=" flex flex-col" minSize={4} defaultSize={4}>
+              <h1 className="text-xl font-bold text-neutral-300 flex p-2"><SiGooglegemini size={24} /></h1>
+            </ResizablePanel>
           </ResizablePanelGroup>
         </ResizablePanel>
         <ResizableHandle />
