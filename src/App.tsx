@@ -9,6 +9,9 @@ import {
 import { useState } from "react";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
+import { FormChat } from "./components/Gemini/Form/FormChat";
+import { ChatMessage } from "./components/Gemini/Message/ChatMessage";
+import Gemini from "./components/Gemini/Gemini";
 
 function App() {
   const [html, setHtml] = useState("");
@@ -55,9 +58,7 @@ function App() {
               icon={<RiJavascriptFill size={24} color="#f7df1e" />}
             />
             <ResizableHandle className="bg-slate-800"  />
-            <ResizablePanel className=" flex flex-col" minSize={4} defaultSize={4}>
-              <h1 className="text-xl font-bold text-neutral-300 flex p-2"><SiGooglegemini size={24} /></h1>
-            </ResizablePanel>
+            <Gemini />
           </ResizablePanelGroup>
         </ResizablePanel>
         <ResizableHandle />
