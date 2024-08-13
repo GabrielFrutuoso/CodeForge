@@ -14,8 +14,10 @@ const UseAskAI = async (
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    messages.push({ message: text, sender: "ai" });
-    setMessages([...messages]);
+    setMessages(current => [...current, { message: text, sender: "ai" }]);
+    console.log(text);
+    
+    
   } catch (error) {
     alert("Error: " + error);
   }
