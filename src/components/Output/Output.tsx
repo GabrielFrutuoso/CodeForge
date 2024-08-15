@@ -42,11 +42,17 @@ export const Output = ({
 
   return (
     <div className="w-full h-full">
+      {html || css || js ? 
       <iframe
         sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-presentation allow-storage-access-by-iframe"
         className="w-full h-full"
         srcDoc={srcDoc}
       ></iframe>
+      :
+      <div className="h-full w-full flex items-center justify-center">
+        <h1 className="text-3xl font-bold text-neutral-300">Start coding now 🤓</h1>
+      </div>
+      }
     </div>
   );
 };
