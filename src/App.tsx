@@ -1,4 +1,4 @@
-import { SiCurseforge, SiGooglegemini } from "react-icons/si";
+import { SiCurseforge } from "react-icons/si";
 import { EditorComponent } from "./components/Editor/Editor";
 import { Output } from "./components/Output/Output";
 import {
@@ -9,21 +9,12 @@ import {
 import { useState } from "react";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
-import { FormChat } from "./components/Gemini/Form/FormChat";
-import { ChatMessage } from "./components/Gemini/Message/ChatMessage";
 import Gemini from "./components/Gemini/Gemini";
 
 function App() {
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
-
-  window.onkeydown = (e) => {
-    if (e.ctrlKey && e.key === "g") {
-      e.preventDefault();
-      alert('teste')
-    }
-  };
 
   return (
     <div className="flex h-screen w-screen overflow-clip">
