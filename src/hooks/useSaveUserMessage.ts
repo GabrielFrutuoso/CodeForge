@@ -1,5 +1,4 @@
 const UseSaveUserMessage = (
-  messages: any,
   userMessage: string,
   setMessages: React.Dispatch<React.SetStateAction<any>>
 ) => {

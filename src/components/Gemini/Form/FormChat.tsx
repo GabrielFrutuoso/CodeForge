@@ -7,7 +7,7 @@ export const FormChat = ({ message, setMessages }: any) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    UseSaveUserMessage(message, e.target?.[0].value, setMessages);
+    UseSaveUserMessage(e.target?.[0].value, setMessages);
     await UseAskAI(e.target?.[0].value, setMessages)
     e.target.reset();
   };
