@@ -14,7 +14,7 @@ const Gemini = () => {
 
   return (
     <ResizablePanel className=" flex flex-col" minSize={4} defaultSize={4}>
-    <h1 className="text-xl font-bold text-neutral-300 flex p-2"><SiGooglegemini size={24} /></h1>
+    <h1 title='Gemini' className="text-xl font-bold text-neutral-300 flex items-center p-2"><SiGooglegemini size={24} /> Gemini</h1>
     <div className="flex flex-col h-[95%]">
       <div className="flex flex-col flex-1 gap-6 px-4 py-1 overflow-y-auto">
         {messages.map((message, index) => (
