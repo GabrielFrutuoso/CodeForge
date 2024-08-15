@@ -2,7 +2,7 @@ import UseAskAI from "@/hooks/useAskAI";
 import UseSaveUserMessage from "@/hooks/useSaveUserMessage";
 import { BiSend } from "react-icons/bi";
 
-export const FormChat = ({ message, setMessages }: any) => {
+export const FormChat = ({ setMessages }: any) => {
 
 
   const handleSubmit = async (e: any) => {
