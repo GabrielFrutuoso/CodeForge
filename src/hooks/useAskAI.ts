@@ -6,7 +6,6 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const UseAskAI = async (
   userMessage: string,
-  messages: any,
   setMessages: any
 ) => {
   try {
@@ -14,7 +13,7 @@ const UseAskAI = async (
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    setMessages(current => [...current, { message: text, sender: "ai" }]);
+    setMessages((current: any) => [...current, { message: text, sender: "ai" }]);
     console.log(text);
     
     

@@ -3,7 +3,7 @@ const UseSaveUserMessage = (
   userMessage: string,
   setMessages: React.Dispatch<React.SetStateAction<any>>
 ) => {
-  setMessages((current) => [
+  setMessages((current: any) => [
     ...current,
     { message: userMessage, sender: "user" },
   ]);

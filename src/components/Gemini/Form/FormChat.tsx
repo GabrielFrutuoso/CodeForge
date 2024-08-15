@@ -5,10 +5,10 @@ import { BiSend } from "react-icons/bi";
 export const FormChat = ({ message, setMessages }: any) => {
 
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     UseSaveUserMessage(message, e.target?.[0].value, setMessages);
-    await UseAskAI(e.target?.[0].value, message, setMessages)
+    await UseAskAI(e.target?.[0].value, setMessages)
     e.target.reset();
   };
 
